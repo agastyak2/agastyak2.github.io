@@ -11,7 +11,7 @@
         body {
             font-family: 'Roboto', sans-serif;
             text-align: center;
-            background-color: #fffdf7;
+            background-color: #FFFDF8;
             color: #333;
             margin: 0;
             display: flex;
@@ -23,78 +23,20 @@
         h1 {
             font-size: 6rem;
             color: #434343;
-            font-family: 'Courier New', monospace;
-        }
+			font-family: 'Courier New', monospace;
+      }
         p {
             font-size: 1.5rem;
             margin: 10px 0;
-            color: #434343;
-            font-family: 'Arial', sans-serif;
-        }
-        .word-wheel-container {
-            width: 200px;
-            height: 80px;
-            overflow: hidden;
-            position: relative;
-            margin-top: 20px;
-        }
-        .word-wheel {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            animation: scrollWords 5s linear infinite;
-        }
-        .word-wheel span {
-            font-size: 1.5rem;
-            text-align: center;
-            line-height: 80px;
-            white-space: nowrap;
-            color: #434343;
-        }
-        @keyframes scrollWords {
-            0% {
-                transform: translateY(0);
-            }
-            100% {
-                transform: translateY(-800px); /* Adjust based on total height */
-            }
+      		color: #434343;
+			font-family: 'Arial', sans-serif;
         }
     </style>
 </head>
 <body>
     <h1>Ågastyak</h1>
     <p>Coming soon</p>
-    <div class="word-wheel-container">
-        <div class="word-wheel">
-            <span>Strategy</span>
-            <span>Pricing</span>
-            <span>Design</span>
-            <span>Experience</span>
-            <span>Go To Market</span>
-            <span>Operations</span>
-            <span>Analytics</span>
-            <span>Unit Economics</span>
-            <span>Profitability</span>
-            <span>Growth</span>
-            <span>Portfolio</span>
-            <span>Management</span>
-        </div>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const wordWheel = document.querySelector(".word-wheel");
-            const wordSpans = wordWheel.querySelectorAll("span");
-            const wordHeight = wordSpans[0].offsetHeight;
-
-            // Duplicate words to create an infinite loop effect
-            wordWheel.innerHTML += wordWheel.innerHTML;
-
-            // Dynamically set the total height
-            wordWheel.style.height = `${wordSpans.length * wordHeight}px`;
-        });
-    </script>
 </body>
 </html>
+
+
