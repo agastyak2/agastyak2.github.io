@@ -4,39 +4,186 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Agastyak - Expert consultancy services for New Product Introduction and operational planning. Stay tuned for our launch!">
-    <title>Agastyak - Coming Soon</title>
+    <title>Agastyak</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-            background-color: #FFFDF8;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fffdf7;
             color: #333;
             margin: 0;
             display: flex;
             flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .logo {
+            width: 80px; /* Default size */
+            height: 80px; /* Maintain square aspect ratio */
         }
         h1 {
             font-size: 6rem;
             color: #434343;
-			font-family: 'Courier New', monospace;
-      }
-        p {
+            font-weight: 100; /* Thin style */
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap; /* Ensure wrapping for smaller screens */
+        }
+        .product-label {
             font-size: 1.5rem;
-            margin: 10px 0;
-      		color: #434343;
-			font-family: 'Arial', sans-serif;
+            color: #434343;
+            font-weight: 500; /* Medium style */
+            margin-right: 10px;
+        }
+        .word-wheel-container {
+            width: 300px;
+            height: 80px;
+            overflow: hidden;
+            position: relative;
+        }
+        .word-wheel {
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            animation: scrollWords 30s linear infinite;
+            text-align: left;
+        }
+        .word-wheel-container:hover .word-wheel {
+            animation-play-state: paused; /* Pause on hover */
+        }
+        .word-wheel span {
+            font-size: 1.5rem;
+            line-height: 40px;
+            white-space: nowrap;
+            color: #434343;
+            font-weight: 400; /* Normal style */
+        }
+        footer {
+            padding: 10px 0;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+        footer a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500; /* Medium style for link */
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @keyframes scrollWords {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-1200px); /* Adjust based on total height */
+            }
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem;
+            }
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+            .product-label {
+                font-size: 1.2rem;
+            }
+            .word-wheel span {
+                font-size: 1.2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 3rem;
+            }
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+            .product-label {
+                font-size: 1rem;
+            }
+            .word-wheel span {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Ågastyak</h1>
-    <p>Coming soon</p>
+    <div class="main-container">
+        <div class="header-container">
+            <img src="logo.png" alt="Agastyak Logo" class="logo">
+            <h1>ÅGASTYAK</h1>
+        </div>
+        <div class="carousel-container">
+            <div class="product-label">Product</div>
+            <div class="word-wheel-container">
+                <div class="word-wheel">
+                    <span>Strategy</span>
+                    <span>Pricing</span>
+                    <span>Competitive Analysis</span>
+                    <span>Positioning</span>
+                    <span>Messaging</span>
+                    <span>Development</span>
+                    <span>Design</span>
+                    <span>Experience</span>
+                    <span>Management</span>
+                    <span>Go To Market</span>
+                    <span>Planning</span>
+                    <span>Roadmap</span>
+                    <span>Portfolio</span>
+                    <span>Lifecycle Management</span>
+                    <span>Operations</span>
+                    <span>Supply Chain</span>
+                    <span>Forecasting</span>
+                    <span>Simulation</span>
+                    <span>Distribution</span>
+                    <span>Analytics</span>
+                    <span>Unit Economics</span>
+                    <span>Profitability</span>
+                    <span>Optimization</span>
+                    <span>Growth</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        © 2024 Agastyak. <a href="mailto:hello@agastyak.com">hello@agastyak.com</a>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const wordWheel = document.querySelector(".word-wheel");
+            const wordSpans = wordWheel.querySelectorAll("span");
+            const wordHeight = wordSpans[0].offsetHeight;
+
+            // Duplicate words to create an infinite loop effect
+            wordWheel.innerHTML += wordWheel.innerHTML;
+
+            // Dynamically set the total height
+            wordWheel.style.height = `${wordSpans.length * wordHeight}px`;
+        });
+    </script>
 </body>
 </html>
-
-
